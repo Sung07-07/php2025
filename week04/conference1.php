@@ -2,11 +2,11 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sessions = $_POST["session"] ?? []; 
-    $identity = $_POST["identity"] ?? ""; 
+    $identity = $_POST["role"] ?? ""; 
     $name = $_POST["name"];
     $fee = 0;
 
-   {
+   if ( $identity == "student"){
     foreach ($sessions as $s) {
         if ($s == "morning") {
             $fee += 150; 
