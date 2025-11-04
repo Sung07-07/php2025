@@ -32,7 +32,7 @@ CREATE TABLE `event` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(30) NOT NULL,
   `description` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 資料表的匯出資料 `event`
@@ -53,14 +53,13 @@ CREATE TABLE `job` (
   `company` varchar(45) NOT NULL,
   `content` text NOT NULL,
   `pdate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 資料表的匯出資料 `job`
 --
 
 INSERT INTO `job` (`postid`, `company`, `content`, `pdate`) VALUES
-(1, '輔仁科技', '誠徵雲端工程師，三年工作經驗以上', '2025-10-18'),
 (2, '樹德資訊', '誠徵雲端工程師，一年工作經驗以上', '2025-10-19'),
 (3, '伯達資訊', '誠徵雲端工程師，三年工作經驗以上', '2025-10-20'),
 (4, '利瑪竇資訊', '誠徵雲端工程師，三年工作經驗以上', '2025-10-25'),
@@ -68,8 +67,9 @@ INSERT INTO `job` (`postid`, `company`, `content`, `pdate`) VALUES
 (6, '輔雲科技', '誠徵程式設計師，一年工作經驗以上', '2025-10-25'),
 (7, '羅耀拉科技', '誠徵程式設計師，無經驗可。', '2025-10-31'),
 (8, '羅耀拉科技', '誠徵雲端工程師，無經驗可。', '2025-11-05'),
+(9, '樹德資訊', '誠徵專案經理，三年工作經驗以上。', '2025-11-05'),
 (10, '伯達資訊', '誠徵專案經理，三年工作經驗以上。', '2025-11-05'),
-(14, '羅耀拉科技', '誠徵雲端工程師，無經驗可。', '2025-10-28');
+(11, '羅耀拉科技', '誠徵專案經理，三年工作經驗以上。', '2025-11-07');
 
 -- --------------------------------------------------------
 
@@ -90,11 +90,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`account`, `password`, `name`, `role`, `created_at`) VALUES
-('root', 'password', '管理員', 'M', '2025-10-21 13:44:57'),
-('teacher', 'tw1', '蔥', 'T', '2025-10-21 13:44:57'),
-('user2', 'pw2', '小華', 'S', '2025-10-21 13:44:57'),
-('user3', 'pw3', '小美', 'S', '2025-10-21 13:44:57'),
-('user4', 'pw4', '小強', 'S', '2025-10-21 13:44:57');
+('root', 'password', '管理員', 'M', '2025-10-21 13:45:16'),
+('root2', '123', '管理員', 'M', '2025-10-28 15:54:34'),
+('teacher1', 'pw1', '聰', 'T', '2025-10-21 13:45:16'),
+('user2', 'pw2', '小華', 'S', '2025-10-21 13:45:16'),
+('user3', 'pw3', '小美', 'S', '2025-10-21 13:45:16'),
+('user4', 'pw4', '小強', 'S', '2025-10-21 13:45:16');
 
 --
 -- 已匯出資料表的索引
@@ -126,12 +127,12 @@ ALTER TABLE `user`
 -- 使用資料表 AUTO_INCREMENT `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- 使用資料表 AUTO_INCREMENT `job`
 --
 ALTER TABLE `job`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;COMMIT;
+  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
